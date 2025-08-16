@@ -16,3 +16,15 @@ A modern weather dashboard built with **React + TypeScript + Vite**, designed to
 - **API:** OpenWeather API  
 
 ## 📂 Project Structure
+
+```bash
+src/
+┣ assets/        # Images, icons, static files
+┣ components/    # Reusable UI components (e.g., WeatherCard, Navbar)
+┣ hooks/         # Custom hooks (e.g., useWeather)
+┣ pages/         # App pages (e.g., Dashboard, Settings)
+┣ store/         # Zustand global store
+┣ utils/         # Helper functions (API calls, formatters)
+┣ App.tsx        # Main app entry
+┗ main.tsx       # ReactDOM render
+
