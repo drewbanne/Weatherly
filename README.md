@@ -12,7 +12,7 @@ A modern weather dashboard built with **React + TypeScript + Vite**, designed to
 ## 🛠️ Tech Stack
 - **Frontend:** React, TypeScript, Vite  
 - **State Management:** Zustand  
-- **Styling:** CSS / TailwindCSS (if you decide to add later)  
-- **API:** OpenWeather API (or any weather API you integrate)  
+- **Styling:** CSS / TailwindCSS  
+- **API:** OpenWeather API  
 
 ## 📂 Project Structure
