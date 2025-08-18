@@ -1,0 +1,159 @@
+/* ====== Global Reset ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ====== Layout ====== */
+body {
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ====== Sidebar ====== */
+.sidebar {
+  width: 240px;
+  background: #1e293b;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.sidebar h2 {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.sidebar a {
+  color: #cbd5e1;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  transition: background 0.3s;
+}
+
+.sidebar a:hover {
+  background: #334155;
+  color: #fff;
+}
+
+/* ====== Main Content ====== */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+}
+
+/* ====== TopBar ====== */
+.topbar {
+  background: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.topbar h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.topbar .search-box {
+  display: flex;
+  align-items: center;
+  background: #f1f5f9;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.topbar input {
+  border: none;
+  outline: none;
+  background: transparent;
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* ====== Dashboard ====== */
+.dashboard {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+/* ====== Landing Page ====== */
+.landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #3b82f6, #06b6d4);
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+
+.landing h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.landing p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.landing button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background: #fff;
+  color: #1e293b;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.landing button:hover {
+  background: #e2e8f0;
+}
