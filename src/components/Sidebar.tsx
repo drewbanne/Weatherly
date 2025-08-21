@@ -1,26 +1,16 @@
-// src/components/Sidebar.tsx
 import React from "react";
 
-type SidebarProps = {
-  onOpenDashboard: () => void;
+const Sidebar: React.FC = () => {
+  return (
+    <aside className="w-64 h-screen bg-blue-900 text-white flex flex-col p-6">
+      <h1 className="text-2xl font-bold mb-8">Weatherly</h1>
+      <nav className="flex flex-col gap-4">
+        <button className="hover:bg-blue-700 p-2 rounded">🏠 Dashboard</button>
+        <button className="hover:bg-blue-700 p-2 rounded">⭐ Favorites</button>
+        <button className="hover:bg-blue-700 p-2 rounded">⚙️ Settings</button>
+      </nav>
+    </aside>
+  );
 };
 
-export default function Sidebar({ onOpenDashboard }: SidebarProps) {
-  return (
-    <div className="sidebar">
-      <div>
-        <div className="icon" id="hamburger" data-tooltip="Menu">≡</div>
-        <div className="separator"></div>
-        <div className="icon weather-icon-btn" data-tooltip="Weather Dashboard" onClick={onOpenDashboard}>☀</div>
-        <div className="icon" data-tooltip="Maps">🗺️</div>
-        <div className="icon" data-tooltip="Calendar">📅</div>
-        <div className="icon" data-tooltip="Alerts">🔔</div>
-        <div className="icon" data-tooltip="Settings">⚙️</div>
-      </div>
-      <div>
-        <div className="separator"></div>
-        <div className="icon" data-tooltip="Help">❓</div>
-      </div>
-    </div>
-  );
-}
+export default Sidebar;

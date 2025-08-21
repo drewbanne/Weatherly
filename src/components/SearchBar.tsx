@@ -1,32 +1,35 @@
-import { useRef } from "react";
+import { useState } from "react";
 import { useWeatherStore } from "../store/weatherStore";
 
-export default function SearchBar() {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const getWeather = useWeatherStore((s) => s.getWeather);
-  const isLoading = useWeatherStore((s) => s.isLoading);
+const SearchBar = () => {
+  const [input, setInput] = useState("");
+  const setCity = useWeatherStore((state) => state.setCity);
 
-  const onSearch = () => {
-    const q = inputRef.current?.value || "";
-    getWeather(q);
-    if (inputRef.current) inputRef.current.value = "";
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (input.trim()) {
+      setCity(input.trim());
+      setInput(""); // clear field after search
+    }
   };
 
   return (
-    <div style={{ display: "flex", gap: 8 }}>
+    <form onSubmit={handleSearch} className="flex gap-2 mb-4">
       <input
-        ref={inputRef}
-        placeholder="Search a city (e.g. Accra)"
-        onKeyDown={(e) => e.key === "Enter" && onSearch()}
-        style={{ padding: "10px 12px", borderRadius: 12, border: "1px solid #ddd", minWidth: 240 }}
+        type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        placeholder="Enter city name..."
+        className="flex-1 p-2 rounded-lg border border-gray-300"
       />
       <button
-        onClick={onSearch}
-        disabled={isLoading}
-        style={{ padding: "10px 16px", borderRadius: 10, border: "none", fontWeight: 600, cursor: "pointer" }}
+        type="submit"
+        className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
       >
-        {isLoading ? "Loading..." : "Search"}
+        Search
       </button>
-    </div>
+    </form>
   );
-}
+};
+
+export default SearchBar;
