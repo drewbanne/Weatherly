@@ -1,61 +1,25 @@
-import { useEffect, useState } from "react";
+import React from "react";
 
-interface WeatherCardProps {
-  city: string;
+interface Props {
+  weather: any;
 }
 
-interface WeatherData {
-  name: string;
-  main: { temp: number };
-  weather: { description: string; icon: string }[];
-}
-
-export default function WeatherCard({ city }: WeatherCardProps) {
-  const [data, setData] = useState<WeatherData | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchWeather() {
-      try {
-        setLoading(true);
-        setError(null);
-        const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${
-            import.meta.env.VITE_OPENWEATHER_API_KEY
-          }&units=metric`
-        );
-
-        if (!response.ok) throw new Error("City not found");
-
-        const result = await response.json();
-        setData(result);
-      } catch (err: any) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchWeather();
-  }, [city]);
+const WeatherCard: React.FC<Props> = ({ weather }) => {
+  if (!weather) return null;
 
   return (
-    <div className="bg-white rounded-2xl shadow p-4 text-center">
-      {loading && <p>Loading...</p>}
-      {error && <p className="text-red-500">{error}</p>}
-      {data && (
-        <>
-          <h2 className="text-lg font-bold">{data.name}</h2>
-          <img
-            src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
-            alt={data.weather[0].description}
-            className="mx-auto"
-          />
-          <p className="text-2xl font-semibold">{Math.round(data.main.temp)}°C</p>
-          <p className="capitalize text-gray-600">{data.weather[0].description}</p>
-        </>
-      )}
+    <div className="bg-white/20 dark:bg-white/10 backdrop-blur-xl rounded-2xl shadow-lg p-6 flex flex-col items-center">
+      <h2 className="text-2xl font-bold">{weather.name}</h2>
+      <p className="text-lg">{weather.weather[0].description}</p>
+      <p className="text-5xl font-semibold mt-4">
+        {Math.round(weather.main.temp)}°C
+      </p>
+      <div className="flex gap-6 mt-4 text-sm">
+        <p>Humidity: {weather.main.humidity}%</p>
+        <p>Wind: {weather.wind.speed} m/s</p>
+      </div>
     </div>
   );
-}
+};
+
+export default WeatherCard;

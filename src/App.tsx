@@ -1,14 +1,9 @@
-import { useState } from "react";
-import TopBar from "./components/TopBar";
-import Dashboard from "./components/Dashboard";
+// src/App.tsx
+import React from "react";
+import Dashboard from "./pages/Dashboard"; // Ensure this path is correct
 
-export default function App() {
-  const [searchCity, setSearchCity] = useState<string | null>(null);
+const App = () => {
+  return <Dashboard />;
+};
 
-  return (
-    <div className="min-h-screen bg-gray-100">
-      <TopBar onSearch={(city) => setSearchCity(city)} />
-      <Dashboard searchCity={searchCity} />
-    </div>
-  );
-}
+export default App;

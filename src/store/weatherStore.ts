@@ -6,10 +6,15 @@ interface WeatherState {
   addCity: (city: string) => void;
 }
 
-export const useWeatherStore = create<WeatherState>((set) => ({
-  cities: [],
+export const useWeatherStore = create<WeatherState>((set, get) => ({
+  cities: ["London", "Cape Town", "Miami"], // Initial mock history
   addCity: (city) =>
-    set((state) => ({
-      cities: [...state.cities, city],
-    })),
+    set((state) => {
+      const normalizedCity = city.trim();
+      const updatedCities = [
+        normalizedCity,
+        ...state.cities.filter((c) => c.toLowerCase() !== normalizedCity.toLowerCase()),
+      ].slice(0, 5);
+      return { cities: updatedCities };
+    }),
 }));
