@@ -35,13 +35,21 @@ Designed to be **clean, responsive, and intuitive**, Weatherly delivers live wea
 
 ## 📂 Project Structure  
 src/
+
 ┣ assets/ # Static files (images, icons)
+
 ┣ components/ # Reusable UI (Sidebar, Topbar, WeatherCard, etc.)
+
 ┣ hooks/ # Custom React hooks
+
 ┣ pages/ # App pages (Landing, Dashboard)
+
 ┣ store/ # Zustand state management
+
 ┣ utils/ # API helpers & utility functions
+
 ┣ App.tsx # App entry point (routing & layout)
+
 ┗ main.tsx # React + Vite bootstrap
 ---
 ## 👤 Author  
