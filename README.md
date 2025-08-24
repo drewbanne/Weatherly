@@ -1,8 +1,9 @@
-Weatherly 🌦️
+##Weatherly 🌦️
+
 A modern weather dashboard built with Vite + React + TypeScript, featuring Zustand for state management and reusable UI components.
 Designed to be simple, clean, and responsive, now with live data capabilities!
 
-🚀 Features
+##🚀 Features
 Real-time Weather Data: Get live weather updates for any city worldwide using the OpenWeatherMap API 🌍.
 
 Accurate Local Times: Displays current time, sunrise, and sunset reflecting the specific timezone of the searched city.
@@ -27,7 +28,7 @@ State Management with Zustand: Efficient and flexible state handling.
 
 Easy-to-Extend Modular Architecture: Built with reusability in mind for future enhancements 🧩.
 
-🛠️ Tech Stack
+##🛠️ Tech Stack
 React (Vite + TypeScript) – Frontend framework
 
 Zustand – Global state management
@@ -40,7 +41,7 @@ Lucide React – Modern, consistent icon library
 
 GitHub Pages / Vercel – Deployment (planned)
 
-📂 Project Structure
+##📂 Project Structure
 src/
 ┣ assets/           # Images, icons
 ┣ components/       # Reusable UI components (Sidebar, Topbar, WeatherCard, etc.)
@@ -51,7 +52,7 @@ src/
 ┣ App.tsx           # App entry point (handles routing & layout)
 ┗ main.tsx          # React/Vite bootstrap
 
-👤 Author
+##👤 Author
 Andrews Banne
 📧 Email: andy.banne007@gmail.com
 🔗 GitHub: @drewbanne
